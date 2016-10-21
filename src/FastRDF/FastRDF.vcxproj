@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2CCACF82-6B9E-4508-8B36-D43833DBDB93}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>FastRDF</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)\external\Raptor;$(SolutionDir)\external\boost_1_59_0;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)\external\boost_1_59_0;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_SCL_SECURE_NO_WARNINGS;NOMINMAX;RAPTOR_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\FastRDF</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\FastRDF</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core\BlankNode.h" />
+    <ClInclude Include="Core\ClassBinding.h" />
+    <ClInclude Include="Core\ConstantLiteral.h" />
+    <ClInclude Include="Core\ConstantLiteralNode.h" />
+    <ClInclude Include="Core\ConstantSizeLiteral.h" />
+    <ClInclude Include="Core\ConstantSizeLiteralNode.h" />
+    <ClInclude Include="Core\Dataset.h" />
+    <ClInclude Include="Core\Datasource.h" />
+    <ClInclude Include="Core\Datatype.h" />
+    <ClInclude Include="Core\DynamicLiteral.h" />
+    <ClInclude Include="Core\DynamicLiteralNode.h" />
+    <ClInclude Include="Core\FunctionBinder.h" />
+    <ClInclude Include="Core\Graph.h" />
+    <ClInclude Include="Core\NativeClassGraphTemplate.h" />
+    <ClInclude Include="Core\Literal.h" />
+    <ClInclude Include="Core\LiteralNode.h" />
+    <ClInclude Include="Core\TemplateBinding.h" />
+    <ClInclude Include="Core\UriPlaceHolderNode.h" />
+    <ClInclude Include="Core\NodeId.h" />
+    <ClInclude Include="Core\Path.h" />
+    <ClInclude Include="Core\RelativeConstantSizeLiteral.h" />
+    <ClInclude Include="Core\RelativeConstantSizeLiteralNode.h" />
+    <ClInclude Include="Core\ReferentNode.h" />
+    <ClInclude Include="Core\Triple.h" />
+    <ClInclude Include="Core\Uri.h" />
+    <ClInclude Include="Core\UriNode.h" />
+    <ClInclude Include="Core\XSDTypeHelper.h" />
+    <ClInclude Include="DefaultIncludes.h" />
+    <ClInclude Include="Serializer\BinaryBlobDeserializer.h" />
+    <ClInclude Include="Serializer\BinaryBlobSerializer.h" />
+    <ClInclude Include="Serializer\BinaryLiteralDescriptor.h" />
+    <ClInclude Include="Serializer\DefaultStringSerializer.h" />
+    <ClInclude Include="Serializer\NTripleDeserializer.h" />
+    <ClInclude Include="Serializer\NTripleSerializer.h" />
+    <ClInclude Include="Serializer\RaptorDeserializer.h" />
+    <ClInclude Include="Serializer\RaptorSerializer.h" />
+    <ClInclude Include="Serializer\StructureDeserializer.h" />
+    <ClInclude Include="Serializer\StructureSerializer.h" />
+    <ClInclude Include="Serializer\TranslationTable.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="Typedefs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\ConstantLiteralNode.cpp" />
+    <ClCompile Include="Core\ConstantSizeLiteralNode.cpp" />
+    <ClCompile Include="Core\Dataset.cpp" />
+    <ClCompile Include="Core\Datasource.cpp" />
+    <ClCompile Include="Core\DynamicLiteralNode.cpp" />
+    <ClCompile Include="Core\FastRDF.cpp" />
+    <ClCompile Include="Core\Graph.cpp" />
+    <ClCompile Include="Core\LiteralNode.cpp" />
+    <ClCompile Include="Core\NativeClassGraphTemplate.cpp" />
+    <ClCompile Include="Core\Path.cpp" />
+    <ClCompile Include="Core\ReferentNode.cpp" />
+    <ClCompile Include="Core\RelativeConstantSizeLiteralNode.cpp" />
+    <ClCompile Include="Core\Uri.cpp" />
+    <ClCompile Include="Core\UriNode.cpp" />
+    <ClCompile Include="Core\UriPlaceholderNode.cpp" />
+    <ClCompile Include="Core\XSDTypeHelper.cpp" />
+    <ClCompile Include="Serializer\BinaryBlobDeserializer.cpp" />
+    <ClCompile Include="Serializer\BinaryBlobSerializer.cpp" />
+    <ClCompile Include="Serializer\DefaultStringSerializer.cpp" />
+    <ClCompile Include="Serializer\NTripleDeserializer.cpp" />
+    <ClCompile Include="Serializer\NTripleSerializer.cpp" />
+    <ClCompile Include="Serializer\RaptorDeserializer.cpp" />
+    <ClCompile Include="Serializer\RaptorSerializer.cpp" />
+    <ClCompile Include="Serializer\StructureDeserializer.cpp" />
+    <ClCompile Include="Serializer\StructureSerializer.cpp" />
+    <ClCompile Include="Serializer\TranslationTable.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\external\Raptor\Raptor.vcxproj">
+      <Project>{6cb24ba3-ce32-4881-b8e4-371390d73fb7}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\boost.1.62.0.0\build\native\boost.targets" Condition="Exists('..\packages\boost.1.62.0.0\build\native\boost.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\boost.1.62.0.0\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\boost.1.62.0.0\build\native\boost.targets'))" />
+  </Target>
+</Project>
